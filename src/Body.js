@@ -12,9 +12,9 @@ class Body extends React.Component{
     super()
     this.state = {
       user: {
-        name: "",
-        isLoggedIn: false
-      }
+        name: ""
+      },
+      isLoggedIn: false
     }
   }
 
@@ -23,6 +23,8 @@ class Body extends React.Component{
     let accessToken = parsed.access_token
     if (!accessToken)
       return;
+    else 
+      this.setState({isLoggedIn: true})
     
     fetch("https://api.spotify.com/v1/me", {
       headers: {'Authorization': 'Bearer ' + accessToken}
@@ -35,7 +37,6 @@ class Body extends React.Component{
     }).then(response => response.json())
     .then(data => this.setState({
       playlists: data.items.map(item => {
-        console.log(data.items)
         return {
           name: item.name,
           imageUrl: item.images[0].url, 
@@ -73,28 +74,20 @@ class Body extends React.Component{
       })
     }))
 
+
   }
 
   
   render() {
-    if(this.state.user.name){
-      this.setState({
-        user: {
-          isLoggedIn: true
-        }
-      })
-    }
     return (
       <div>
-        <button style={{display: this.state.user.isLoggedIn && "none"}} className="login" onClick={handleClick}> Login </button>
+        <button style={{display: this.state.isLoggedIn && "none"}} className="login" onClick={handleClick}> Login </button>
         <br />
         <hr />
-        {this.state.user.name ?
-        <h1 className="username">
+        <h1 style={{display: !this.state.user.name && "none"}} className="username">
           Username: {this.state.user.name}
         </h1>
-        : [] 
-        }
+
         <div style={{display: 'flex'}}>
           {this.state.playlists ?
           <div className="playlists">
@@ -147,7 +140,14 @@ class Body extends React.Component{
   }
 }
 
-        
+        /*
+        {this.state.user.name ?
+        <h1 className="username">
+          Username: {this.state.user.name}
+        </h1>
+        : [] 
+        }
+        */
 
 function handleClick() {
   window.open("http://localhost:8888/login");
