@@ -1,6 +1,7 @@
 import React from "react"
 import queryString from "query-string";
 import Playlist from "./Playlist"
+import TopArtists from "./TopArtists"
 import "./Body.css"
 
 
@@ -39,8 +40,20 @@ class Body extends React.Component{
         }
     })
     }))
-    
-    
+
+
+    fetch('https://api.spotify.com/v1/me/top/artists', {
+      headers: {'Authorization': 'Bearer ' + accessToken}
+  }).then(response => response.json()) 
+    .then(data => this.setState({
+      topArtists: data.items.map(artist => {
+        console.log(data)
+        return {
+          name: artist.name,
+          imageUrl: artist.images[2].url
+        }
+      })
+    })) 
 
   }
 
@@ -72,7 +85,20 @@ class Body extends React.Component{
           : []
           }
           <div>
-            <h3>Favorite Artists</h3>
+
+        <div>
+          {this.state.topArtists ? 
+          <div className = "topArtists">
+            
+            <h3>Top Artists:</h3>
+            {this.state.topArtists.map(artist => 
+              <TopArtists topArtists = {artist} />
+              )}
+          </div>
+          : []
+          }
+        </div>
+
           </div>
         </div>
         
