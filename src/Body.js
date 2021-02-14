@@ -140,15 +140,6 @@ class Body extends React.Component{
   }
 }
 
-/*
-        <div> 
-        
-        {this.state.playlists.map(playlist => 
-            <Playlist playlist={playlist} />
-        )}
-        
-        </div>
-        */
         
 
 function handleClick() {
