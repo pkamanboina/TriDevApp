@@ -10,6 +10,7 @@ class Playlist extends React.Component {
         let playlist = this.props.playlist
         return(
             <div> 
+                <img src = {playlist.imageUrl} style = {{width: '160px'}}></img>
                 {playlist.name}
             </div>
         )
