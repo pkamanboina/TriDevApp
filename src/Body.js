@@ -29,7 +29,16 @@ class Body extends React.Component{
     fetch("https://api.spotify.com/v1/me", {
       headers: {'Authorization': 'Bearer ' + accessToken}
     }).then(response => response.json())
-    .then(data => this.setState({user: {name: data.display_name}}))
+    .then(data => this.setState({
+      user: {
+        name: data.display_name,
+        imgUrl: data.images[0].url
+      }
+    }))
+
+    
+    
+    
 
     
     fetch('https://api.spotify.com/v1/me/playlists', {
@@ -84,9 +93,13 @@ class Body extends React.Component{
         <button style={{display: this.state.isLoggedIn && "none"}} className="login" onClick={handleClick}> Login </button>
         <br />
         <hr />
-        <h1 style={{display: !this.state.user.name && "none"}} className="username">
-          Username: {this.state.user.name}
-        </h1>
+
+        <div className="profile">
+          <img src = {this.state.user.imgUrl} style = {{width: '60px'}}></img>
+          <h1 style={{display: !this.state.user.name && "none"}} className="username">
+            Username: {this.state.user.name}
+          </h1>
+        </div>
 
         <div style={{display: 'flex'}}>
           {this.state.playlists ?
