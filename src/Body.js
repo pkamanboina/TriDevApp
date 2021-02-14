@@ -1,5 +1,6 @@
-import React from "react"
+import React from "react";
 import queryString from "query-string";
+import './Body.css'
 
 let params
 
@@ -32,11 +33,11 @@ class Body extends React.Component{
     
     return (
       <div>
-        <button onClick={handleClick}> Login </button>
+        <button className="login" onClick={handleClick}> Login </button>
         <br />
         <hr />
         {this.state.serverData.user.name ?
-        <h1>
+        <h1 className="username">
           Username: {this.state.serverData.user.name}
         </h1>
         : [] 
