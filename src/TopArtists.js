@@ -9,8 +9,10 @@ class TopArtists extends React.Component {
         let topArtists = this.props.topArtists
         return (
             <div>
+                <div>
                 <img src = {topArtists.imageUrl}></img>
-                {topArtists.name}
+                </div>
+                <p>{topArtists.name}</p>
             </div>
         )
     }
