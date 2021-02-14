@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import queryString from "query-string";
 import Playlist from "./Playlist"
 import TopArtists from "./TopArtists"
@@ -79,11 +79,11 @@ class Body extends React.Component{
     console.log(this.state.playlists)
     return (
       <div>
-        <button onClick={handleClick}> Login </button>
+        <button className="login" onClick={handleClick}> Login </button>
         <br />
         <hr />
         {this.state.user.name ?
-        <h1>
+        <h1 className="username">
           Username: {this.state.user.name}
         </h1>
         : [] 

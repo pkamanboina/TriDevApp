@@ -1,3 +1,38 @@
+.login{
+    display: inline-block;
+    padding:0.75em 1.2em;
+    border:0.1em solid #080808;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#000000b4;
+    text-align:center;
+    transition: all 0.2s;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+}
+.login:hover{
+    color:#000000;
+    background-color:#9cbecc;
+}
+
+.username{
+    color: #353232; 
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 40px;
+    font-weight: 300; 
+    line-height: 58px;
+}
+/* @media all and (max-width:30em){
+    .login{
+        display:block;
+        margin:0.4em auto;
+    }
+} */
 .playlists {
     margin-left: 50px;
     margin-right: 20px;
