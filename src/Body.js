@@ -115,7 +115,8 @@ class Body extends React.Component{
           : []
           }
         </div>
-
+        <br />
+        <hr />
         <div>
           {this.state.topTracks ?
           <div className = "topTracks">
@@ -140,14 +141,7 @@ class Body extends React.Component{
   }
 }
 
-        /*
-        {this.state.user.name ?
-        <h1 className="username">
-          Username: {this.state.user.name}
-        </h1>
-        : [] 
-        }
-        */
+
 
 function handleClick() {
   window.open("http://localhost:8888/login");
