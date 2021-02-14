@@ -12,7 +12,8 @@ class Body extends React.Component{
     super()
     this.state = {
       user: {
-        name: ""
+        name: "",
+        isLoggedIn: false
       }
     }
   }
@@ -22,6 +23,7 @@ class Body extends React.Component{
     let accessToken = parsed.access_token
     if (!accessToken)
       return;
+    
     fetch("https://api.spotify.com/v1/me", {
       headers: {'Authorization': 'Bearer ' + accessToken}
     }).then(response => response.json())
@@ -75,11 +77,16 @@ class Body extends React.Component{
 
   
   render() {
-
-    console.log(this.state.playlists)
+    if(this.state.user.name){
+      this.setState({
+        user: {
+          isLoggedIn: true
+        }
+      })
+    }
     return (
       <div>
-        <button className="login" onClick={handleClick}> Login </button>
+        <button style={{display: this.state.user.isLoggedIn && "none"}} className="login" onClick={handleClick}> Login </button>
         <br />
         <hr />
         {this.state.user.name ?
