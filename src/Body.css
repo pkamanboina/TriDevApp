@@ -1,23 +1,26 @@
 .login{
     display: inline-block;
-    padding:0.75em 1.2em;
-    border:0.1em solid #080808;
+    padding:1em 1.5em;
+    border:0.15em solid #080808;
     margin:0 0.3em 0.3em 0;
-    border-radius:0.12em;
+    border-radius:15px;
     box-sizing: border-box;
     text-decoration:none;
-    font-family:'Roboto',sans-serif;
+    font-family:'Open Sans', sans-serif;
     font-weight:300;
+    
     color:#000000b4;
     text-align:center;
     transition: all 0.2s;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
+    background-color: #9cbecc02;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .login:hover{
     color:#000000;
-    background-color:#9cbecc;
+    background-color:#7bbdda8f;
 }
 
 .username{

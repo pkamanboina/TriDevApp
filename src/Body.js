@@ -81,7 +81,6 @@ class Body extends React.Component{
       <div>
         <button className="login" onClick={handleClick}> Login </button>
         <br />
-        <hr />
         {this.state.user.name ?
         <h1 className="username">
           Username: {this.state.user.name}
