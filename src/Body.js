@@ -1,11 +1,8 @@
 import React from "react";
-import queryString from "query-string";
-import Playlist from "./Playlist"
-import TopArtists from "./TopArtists"
-import TopTracks from "./TopTracks"
 import "./Body.css"
+import { Redirect } from "react-router-dom";
 
-
+let accessToken
 class Body extends React.Component{
 
   constructor() {
@@ -19,12 +16,13 @@ class Body extends React.Component{
   }
 
   componentDidMount() {
-    let parsed = queryString.parse(window.location.search);
-    let accessToken = parsed.access_token
-    if (!accessToken)
+  
+    if(!this.props.token) 
       return;
     else 
       this.setState({isLoggedIn: true})
+
+    accessToken = this.props.token
     
     fetch("https://api.spotify.com/v1/me", {
       headers: {'Authorization': 'Bearer ' + accessToken}
@@ -33,133 +31,68 @@ class Body extends React.Component{
       user: {
         name: data.display_name,
         imgUrl: data.images[0].url
-      }
+      },
+      redirect: null
     }))
 
     
     
-    
-
-    
-    fetch('https://api.spotify.com/v1/me/playlists', {
-      headers: {'Authorization': 'Bearer ' + accessToken}
-    }).then(response => response.json())
-    .then(data => this.setState({
-      playlists: data.items.map(item => {
-        return {
-          name: item.name,
-          imageUrl: item.images[0].url, 
-          songs: []
-        }
-    })
-    }))
-
-
-    fetch('https://api.spotify.com/v1/me/top/artists', {
-      headers: {'Authorization': 'Bearer ' + accessToken}
-  }).then(response => response.json()) 
-    .then(data => this.setState({
-      topArtists: data.items.map(artist => {
-        return {
-          name: artist.name,
-          imageUrl: artist.images[2].url
-        }
-      })
-    })) 
-
-    fetch('https://api.spotify.com/v1/me/top/tracks', {
-      headers: {'Authorization': 'Bearer ' + accessToken}
-  }).then(response => response.json()) 
-    .then(data => this.setState({
-      topTracks: data.items.map(track => {
-        return {
-          name: track.name,
-          artist: track.artists.map(artist => {
-            return (
-              artist.name + " "
-            )
-          })
-        }
-      })
-    }))
 
 
   }
-
+  
   
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />
+    }
     return (
-      <div>
-        <button style={{display: this.state.isLoggedIn && "none"}} className="login" onClick={handleClick}> Login </button>
-        <br />
-        <hr />
 
+      
+      <div>
+        
         <div className="profile">
           <img src = {this.state.user.imgUrl} style = {{width: '60px'}}></img>
           <h1 style={{display: !this.state.user.name && "none"}} className="username">
             Username: {this.state.user.name}
           </h1>
         </div>
-
-        <div style={{display: 'flex'}}>
-          {this.state.playlists ?
-          <div className="playlists">
-
-          <h3>Playlists:</h3>
-          <br />
-          {this.state.playlists.map(playlist => 
-              <Playlist playlist={playlist} />
-          )}
-          </div>
-          : []
-          }
-          <div>
-
-        <div>
-          {this.state.topArtists ? 
-          <div className = "topArtists">
-            
-            <h3>Top Artists:</h3>
-            <br />
-            {this.state.topArtists.map(artist => 
-              <TopArtists topArtists = {artist} />
-              )}
-          </div>
-          : []
-          }
-        </div>
+        <button style={{display: this.state.isLoggedIn && "none"}} className="login" onClick={handleLogin}> Login </button>
+        <button className="artistsButton" onClick={handleTopArtists}> Top Artists </button>
+        <button className="playlistsButton" onClick={handlePlaylists}> Playlists </button>
+        <button className="topTracksButton" onClick={handleTopTracks}> Top Tracks </button>
         <br />
         <hr />
-        <div>
-          {this.state.topTracks ?
-          <div className = "topTracks">
-
-            <h3>Top Tracks:</h3>
-            <br />
-            {this.state.topTracks.map(track => 
-              <TopTracks topTracks = {track} />
-              )}
-          </div>
-          : []
-          }
-        </div>
+       
+        <div style={{display: 'flex'}}>
+        <br />
+        <hr />
+        
 
           </div>
         </div>
         
-
-      </div>
 
     );
   }
 }
 
 
-
-function handleClick() {
+function handleLogin() {
   window.open("http://localhost:8888/login");
 }
 
+function handleTopTracks() {
+  window.open("http://localhost:3000/toptracks/?access_token=" + accessToken)
+}
+
+
+function handleTopArtists() {
+  window.open("http://localhost:3000/artists/?access_token=" + accessToken)
+}
+function handlePlaylists() {
+  window.open("http://localhost:3000/playlists/?access_token=" + accessToken)
+}
 
 
 
