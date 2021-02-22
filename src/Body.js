@@ -62,8 +62,13 @@ class Body extends React.Component{
         <button className="playlistsButton" onClick={handlePlaylists}> Playlists </button>
         <button className="topTracksButton" onClick={handleTopTracks}> Top Tracks </button>
         <br />
-        <hr />
-       
+
+        {this.state.user.name ?
+        <h1 className="username">
+          Username: {this.state.user.name}
+        </h1>
+        : [] 
+        }
         <div style={{display: 'flex'}}>
         <br />
         <hr />
