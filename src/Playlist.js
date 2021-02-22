@@ -4,15 +4,48 @@ import React from "react"
 class Playlist extends React.Component {
     constructor() {
         super()
+        this.state = {
+
+        }
 
     }
+
+    componentDidMount() {
+        if(!this.props.token) return;
+
+    fetch('https://api.spotify.com/v1/me/playlists', {
+      headers: {'Authorization': 'Bearer ' + this.props.token}
+    }).then(response => response.json())
+    .then(data => this.setState({
+      playlists: data.items.map(item => {
+        return {
+          name: item.name,
+          imageUrl: item.images[0].url, 
+          songs: []
+        }
+    })
+    }))
+    }
     render() {
-        let playlist = this.props.playlist
         return(
+        <div>
+            {this.state.playlists ?
+            <div className="playlists">
+
+            <h3>Playlists:</h3>
+            <br />
+            {this.state.playlists.map(playlist => 
             <div> 
-                <img src = {playlist.imageUrl} style = {{width: '160px'}}></img>
-                {playlist.name}
-            </div>
+              <div>
+              <img src = {playlist.imageUrl} style = {{width: '160px'}}></img>
+              </div>
+              <p>{playlist.name}</p>
+          </div>
+          )}
+          </div>
+          : []
+          }
+        </div>
         )
     }
 }

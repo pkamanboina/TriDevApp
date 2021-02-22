@@ -35,3 +35,9 @@
     margin-left: 50px;
     margin-right: 20px;
 }
+
+.profile {
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+}
