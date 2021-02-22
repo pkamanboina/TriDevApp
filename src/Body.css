@@ -1,8 +1,8 @@
-.login{
+/* .login{
     display: inline-block;
     padding:1em 1.5em;
     border:0.15em solid #080808;
-    margin:0 0.3em 0.3em 0;
+    margin:20px 0.3em 0.3em 0;
     border-radius:15px;
     box-sizing: border-box;
     text-decoration:none;
@@ -21,7 +21,7 @@
 .login:hover{
     color:#000000;
     background-color:#7bbdda8f;
-}
+} */
 
 .username{
     color: #353232; 
@@ -30,12 +30,7 @@
     font-weight: 300; 
     line-height: 58px;
 }
-/* @media all and (max-width:30em){
-    .login{
-        display:block;
-        margin:0.4em auto;
-    }
-} */
+
 .playlists {
     margin-left: 50px;
     margin-right: 20px;

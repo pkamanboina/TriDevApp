@@ -79,7 +79,7 @@ class Body extends React.Component{
     console.log(this.state.playlists)
     return (
       <div>
-        <button className="login" onClick={handleClick}> Login </button>
+        {/* <button className="login" onClick={handleClick}> Login </button> */}
         <br />
         {this.state.user.name ?
         <h1 className="username">
@@ -150,9 +150,9 @@ class Body extends React.Component{
         */
         
 
-function handleClick() {
-  window.open("http://localhost:8888/login");
-}
+// function handleClick() {
+//   window.open("http://localhost:8888/login");
+// }
 
 
 
