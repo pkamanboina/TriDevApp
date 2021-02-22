@@ -56,6 +56,7 @@ class Body extends React.Component{
           <h1 style={{display: !this.state.user.name && "none"}} className="username">
             Username: {this.state.user.name}
           </h1>
+          
         </div>
         <button style={{display: this.state.isLoggedIn && "none"}} className="login" onClick={handleLogin}> Login </button>
         <button className="artistsButton" onClick={handleTopArtists}> Top Artists </button>
@@ -63,12 +64,6 @@ class Body extends React.Component{
         <button className="topTracksButton" onClick={handleTopTracks}> Top Tracks </button>
         <br />
 
-        {this.state.user.name ?
-        <h1 className="username">
-          Username: {this.state.user.name}
-        </h1>
-        : [] 
-        }
         <div style={{display: 'flex'}}>
         <br />
         <hr />
