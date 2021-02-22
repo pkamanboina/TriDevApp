@@ -48,7 +48,6 @@ class App extends React.Component{
         
         
 
-          <Body />
           <ul className="description" >
             <li>Login to your Spotify account</li>
             <li>View your top artists and songs</li>
