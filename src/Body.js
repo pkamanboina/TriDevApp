@@ -1,6 +1,6 @@
 import React from "react";
 import "./Body.css"
-import { Redirect } from "react-router-dom";
+import { Redirect, Link} from "react-router-dom";
 
 let accessToken
 class Body extends React.Component{
@@ -59,9 +59,15 @@ class Body extends React.Component{
           
         </div>
         <button style={{display: this.state.isLoggedIn && "none"}} className="login" onClick={handleLogin}> Login </button>
-        <button className="artistsButton" onClick={handleTopArtists}> Top Artists </button>
-        <button className="playlistsButton" onClick={handlePlaylists}> Playlists </button>
-        <button className="topTracksButton" onClick={handleTopTracks}> Top Tracks </button>
+        <Link to="/artists">
+          <button className="artistsButton" > Top Artists </button>
+        </Link>
+        <Link to="/playlists">
+          <button className="playlistsButton" > Playlists </button>
+        </Link>
+        <Link to="/toptracks">
+          <button className="topTracksButton" > Top Tracks </button>
+          </Link>
         <br />
 
         <div style={{display: 'flex'}}>
@@ -82,17 +88,6 @@ function handleLogin() {
   window.open("http://localhost:8888/login");
 }
 
-function handleTopTracks() {
-  window.open("http://localhost:3000/toptracks/?access_token=" + accessToken)
-}
-
-
-function handleTopArtists() {
-  window.open("http://localhost:3000/artists/?access_token=" + accessToken)
-}
-function handlePlaylists() {
-  window.open("http://localhost:3000/playlists/?access_token=" + accessToken)
-}
 
 
 
