@@ -62,7 +62,7 @@ class Body extends React.Component{
         <button className="artistsButton" onClick={handleTopArtists}> Top Artists </button>
         <button className="playlistsButton" onClick={handlePlaylists}> Playlists </button>
         <button className="topTracksButton" onClick={handleTopTracks}> Top Tracks </button>
-        <button onClick={handleRecommendations}> Recommended </button>
+        <button className="recommendedButton" onClick={handleRecommendations}> Recommended </button>
         <br />
 
         <div style={{display: 'flex'}}>
