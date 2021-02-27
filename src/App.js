@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { render } from '@testing-library/react';
 import Playlist from './Playlist';
 import TopTracks from "./TopTracks"
+import Recommendations from "./Recommendations"
 
 class App extends React.Component{
     constructor() {
@@ -42,6 +43,7 @@ class App extends React.Component{
           <Route path="/playlists" exact component={() => <Playlist token={this.state.token} />} />
           <Route path="/artists" exact component={() => <TopArtists token={this.state.token} />} />
           <Route path="/toptracks" exact component={() => <TopTracks token={this.state.token} />} />
+          <Route path="/recommendations" exact component={() => <Recommendations token={this.state.token} />} />
         </Switch>
         </Router>
 

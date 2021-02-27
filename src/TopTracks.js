@@ -1,4 +1,5 @@
 import React from "react"
+import "./TopTracks.css"
 
 class TopTracks extends React.Component {
     constructor() {
@@ -35,11 +36,11 @@ class TopTracks extends React.Component {
           {this.state.topTracks ?
           <div className = "topTracks">
 
-            <h3>Top Tracks:</h3>
+            <h3 className="heading">Top Tracks:</h3>
             <br />
             {this.state.topTracks.map(track => 
               <div>
-              <p>{track.name} - {track.artist}</p>
+              <p className="tracks">{track.name} - {track.artist}</p>
             </div>
             )}
           </div>

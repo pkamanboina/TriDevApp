@@ -10,34 +10,35 @@ html{
 }
 
 .header{
-  display: flex;
+  text-align: center;
+  /* display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: baseline; */
   padding: 15px 110px 25px;
  
   
-  position: absolute;
+  /* position: absolute;
   width: 705px;
   height: 127px;
   left: 368px;
-  top: 83px;
+  top: 83px; */
   
   border: 2px solid#000000;
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-border-radius: 40px;
-position: static;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 40px;
+  /* position: static; */
 
-width: 485px;
+/* width: 485px;
 height: 87px;
 left: 110px;
-top: 15px;
+top: 15px; */
 font-family: Open Sans;
 font-style: normal;
 font-weight: 300;
 font-size: 64px;
 line-height: 87px;
 align-items: center;
-text-align: center;
+
 
 color: #000000;
 
@@ -45,10 +46,10 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 /* Inside Auto Layout */
 
-flex: none;
+/* flex: none;
 order: 0;
 flex-grow: 0;
-margin: 0px 10px;
+margin-right: 300px; */
 }
 
 .App-logo {
@@ -102,7 +103,7 @@ nav{
   text-align: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  margin: 25px 400px 40px;
+  margin: 25px 400px 5px;
   border: 2px solid #000000;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 40px;
@@ -128,4 +129,35 @@ li{
   font-size: 40px;
   font-weight: 300;
   margin: 25px 500px 40px;
+}
+
+.priv{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  padding-top: 20px;
+}
+
+.login{
+  display: inline-block;
+  padding:1em 1.5em;
+  border:0.15em solid #080808;
+  margin:20px 0.3em 0.3em 0;
+  border-radius:15px;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Open Sans', sans-serif;
+  font-weight:300;
+  
+  color:#000000b4;
+  text-align:center;
+  transition: all 0.2s;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #9cbecc02;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.login:hover{
+  color:#000000;
+  background-color:#7bbdda8f;
 }

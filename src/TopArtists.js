@@ -1,4 +1,5 @@
 import React from "react"
+import "./TopArtists.css"
 
 class TopArtists extends React.Component {
     constructor() {
