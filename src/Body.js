@@ -1,6 +1,6 @@
 import React from "react";
 import "./Body.css"
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 let accessToken
 class Body extends React.Component{
@@ -58,11 +58,22 @@ class Body extends React.Component{
           </h1>
           
         </div>
+        
+        
+
         <button style={{display: this.state.isLoggedIn && "none"}} className="login" onClick={handleLogin}> Login </button>
-        <button className="artistsButton" onClick={handleTopArtists}> Top Artists </button>
-        <button className="playlistsButton" onClick={handlePlaylists}> Playlists </button>
-        <button className="topTracksButton" onClick={handleTopTracks}> Top Tracks </button>
-        <button className="recommendedButton" onClick={handleRecommendations}> Recommended </button>
+        <Link to="/artists">
+          <button style={{display: !this.state.isLoggedIn && "none"}}className="artistsButton" > Top Artists </button>
+        </Link>
+        <Link to="/playlists">
+          <button style={{display: !this.state.isLoggedIn && "none"}}className="playlistsButton" > Playlists </button>
+        </Link>
+        <Link to="/toptracks">
+          <button style={{display: !this.state.isLoggedIn && "none"}}className="topTracksButton" > Top Tracks </button>
+        </Link>
+        <Link to="/recommendations">
+          <button style={{display: !this.state.isLoggedIn && "none"}}className="recommendedButton" > Recommended </button>
+        </Link>
         <br />
 
         <div style={{display: 'flex'}}>
@@ -83,21 +94,6 @@ function handleLogin() {
   window.open("http://localhost:8888/login");
 }
 
-function handleTopTracks() {
-  window.open("http://localhost:3000/toptracks/?access_token=" + accessToken)
-}
-
-
-function handleTopArtists() {
-  window.open("http://localhost:3000/artists/?access_token=" + accessToken)
-}
-function handlePlaylists() {
-  window.open("http://localhost:3000/playlists/?access_token=" + accessToken)
-}
-
-function handleRecommendations() {
-  window.open("http://localhost:3000/recommendations/?access_token=" + accessToken)
-}
 
 
 
