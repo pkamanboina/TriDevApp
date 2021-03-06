@@ -20,6 +20,7 @@ class TopTracks extends React.Component {
       topTracks: data.items.map(track => {
         return {
           name: track.name,
+          preview: track.preview_url,
           artist: track.artists.map(artist => {
             return (
               artist.name + " "
@@ -42,6 +43,9 @@ class TopTracks extends React.Component {
             {this.state.topTracks.map(track => 
               <div>
               <p className="tracks">{rank++}. {track.name} - {track.artist}</p>
+              <audio controls>
+                <source src={track.preview} />
+              </audio>
             </div>
             )}
           </div>
