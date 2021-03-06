@@ -1,4 +1,5 @@
 import React from "react"
+import "./Playlist.css"
 
 
 class Playlist extends React.Component {
@@ -32,14 +33,14 @@ class Playlist extends React.Component {
             {this.state.playlists ?
             <div className="playlists">
 
-            <h3>Playlists:</h3>
+            <h3 className="heading">Playlists:</h3>
             <br />
             {this.state.playlists.map(playlist => 
             <div> 
               <div>
               <img src = {playlist.imageUrl} style = {{width: '160px'}}></img>
               </div>
-              <p>{playlist.name}</p>
+              <p className="playlistName">{playlist.name}</p>
           </div>
           )}
           </div>

@@ -1,4 +1,5 @@
 import React from "react"
+import "./Recommendations.css"
 
 class Recommendations extends React.Component {
     constructor() {
@@ -48,11 +49,11 @@ class Recommendations extends React.Component {
             {this.state.recommended ? 
             <div>
             
-            <h3>Recommended Artists:</h3>
+            <h3 className="heading">Recommended Artists:</h3>
             <br />
             {this.state.recommended.map(artists => 
               <div>
-                  <p>{artists.name}</p>
+                  <p className="artistName">{artists.name}</p>
               </div>
               )}
             </div>

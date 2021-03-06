@@ -35,14 +35,14 @@ class TopArtists extends React.Component {
             {this.state.topArtists ? 
             <div className = "topArtists">
             
-            <h3>Top Artists:</h3>
+            <h3 className="heading">Top Artists:</h3>
             <br />
             {this.state.topArtists.map(artist => 
               <div>
                   <div>
                   <img src = {artist.imageUrl}></img>
                   </div>
-                  <p>{artist.name}</p>
+                  <p className="artistName">{artist.name}</p>
               </div>
               )}
             </div>
