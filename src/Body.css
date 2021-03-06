@@ -1,4 +1,4 @@
-/* .login{
+ .login{
     display: inline-block;
     padding:1em 1.5em;
     border:0.15em solid #080808;
@@ -21,7 +21,7 @@
 .login:hover{
     color:#000000;
     background-color:#7bbdda8f;
-} */
+} 
 
 .username{
     color: #353232; 
