@@ -31,6 +31,7 @@ class TopTracks extends React.Component {
 
     }
     render() {
+        let rank = 1
         return (
         <div>
           {this.state.topTracks ?
@@ -40,7 +41,7 @@ class TopTracks extends React.Component {
             <br />
             {this.state.topTracks.map(track => 
               <div>
-              <p className="tracks">{track.name} - {track.artist}</p>
+              <p className="tracks">{rank++}. {track.name} - {track.artist}</p>
             </div>
             )}
           </div>

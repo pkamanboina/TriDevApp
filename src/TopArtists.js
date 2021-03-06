@@ -30,6 +30,7 @@ class TopArtists extends React.Component {
     }
 
     render() {
+        let rank = 1
         return (
             <div>
             {this.state.topArtists ? 
@@ -42,7 +43,7 @@ class TopArtists extends React.Component {
                   <div>
                   <img src = {artist.imageUrl}></img>
                   </div>
-                  <p className="artistName">{artist.name}</p>
+                  <p className="artistName">{rank++}. {artist.name}</p>
               </div>
               )}
             </div>
