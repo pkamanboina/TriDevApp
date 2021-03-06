@@ -34,6 +34,7 @@ class Body extends React.Component{
       },
       redirect: null
     }))
+    
 
     
     
@@ -73,6 +74,9 @@ class Body extends React.Component{
         </Link>
         <Link to="/recommendations">
           <button style={{display: !this.state.isLoggedIn && "none"}}className="recommendedButton" > Recommended </button>
+        </Link>
+        <Link to="/recently-played">
+          <button style={{display: !this.state.isLoggedIn && "none"}}className="recentlyPlayedButton" > RecentlyPlayed </button>
         </Link>
         <br />
 

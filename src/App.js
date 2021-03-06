@@ -9,6 +9,7 @@ import { render } from '@testing-library/react';
 import Playlist from './Playlist';
 import TopTracks from "./TopTracks"
 import Recommendations from "./Recommendations"
+import RecentlyPlayed from './RecentlyPlayed';
 
 class App extends React.Component{
     constructor() {
@@ -44,6 +45,7 @@ class App extends React.Component{
           <Route path="/artists" exact component={() => <TopArtists token={this.state.token} />} />
           <Route path="/toptracks" exact component={() => <TopTracks token={this.state.token} />} />
           <Route path="/recommendations" exact component={() => <Recommendations token={this.state.token} />} />
+          <Route path="/recently-played" exact component={() => <RecentlyPlayed token={this.state.token} />} />
         </Switch>
         </Router>
 

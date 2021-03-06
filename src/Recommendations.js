@@ -35,10 +35,12 @@ class Recommendations extends React.Component {
                 recommended: data.artists.map(artist => {
                     return {
                         name: artist.name,
+                        link: artist.external_urls.spotify
                     }
                 })
                 })) 
             })
+
     
         }
 
@@ -51,14 +53,20 @@ class Recommendations extends React.Component {
             
             <h3 className="heading">Recommended Artists:</h3>
             <br />
-            {this.state.recommended.map(artists => 
+            {this.state.recommended.map((artists) => 
               <div>
-                  <p className="artistName">{artists.name}</p>
+                        <p className="artistName">
+                            {artists.name} 
+                        </p>
+                    
               </div>
               )}
             </div>
           : []
           }
+          <br />
+            
+
           </div>
         
         )
