@@ -1,5 +1,5 @@
 html{
-  background-color: #d8e7ee;
+  background-color: #b9d7e6;
 }
 .App {
   text-align: center;
@@ -10,6 +10,7 @@ html{
 }
 
 .header{
+  background-color: rgb(207,228,237);
   text-align: center;
   /* display: flex;
   flex-direction: row;
@@ -115,21 +116,7 @@ li{
   margin-bottom: 40px;
 }
 
-.description{
-  padding-right: 30px;
-  padding-left: 30px;
-  line-height: 45px;
-  padding-top: 30px;
-  text-align: left;
-  padding-bottom: 10px;
-  list-style-type: none;
-  border: 2px solid #000000;
-  border-radius: 40px;
-  font-family: 'Open Sans', sans-serif; 
-  font-size: 40px;
-  font-weight: 300;
-  margin: 25px 500px 40px;
-}
+
 
 .priv{
   font-family: 'Open Sans', sans-serif;

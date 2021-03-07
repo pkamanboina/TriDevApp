@@ -20,7 +20,7 @@
 }
 .login:hover{
     color:#000000;
-    background-color:#7bbdda8f;
+    background-color:rgb(207,228,237);;
 } 
 
 .username{
@@ -171,3 +171,20 @@
     color:#000000;
     background-color:#7bbdda8f;
 }
+
+.description{
+    background-color: rgb(207,228,237);
+    padding-right: 30px;
+    padding-left: 30px;
+    line-height: 45px;
+    padding-top: 30px;
+    text-align: left;
+    padding-bottom: 10px;
+    list-style-type: none;
+    border: 2px solid #000000;
+    border-radius: 40px;
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 40px;
+    font-weight: 300;
+    margin: 25px 500px 40px;
+  }
