@@ -31,6 +31,7 @@ class RecommendedTracks extends React.Component {
                     recommendedTrack: recommended.tracks.map(track => {
                         return {
                             trackName: track.name,
+                            preview: track.preview_url,
                             artist: track.artists.map(artist => {
                                 return (
                                   artist.name + " "
@@ -52,9 +53,12 @@ class RecommendedTracks extends React.Component {
             <br />
             {this.state.recommendedTrack.map((track) => 
               <div>
-                    <p>
-                        {track.trackName} - {track.artist}
-                    </p>
+                <p>
+                    {track.trackName} - {track.artist}
+                </p>
+                <audio controls>
+                     <source src={track.preview} />
+                </audio>
                     
               </div>
               )}
