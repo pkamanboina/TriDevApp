@@ -49,7 +49,7 @@ class RecommendedTracks extends React.Component {
             <div>
             {this.state.recommendedTrack ? 
             <div>
-            
+            <h3 className="heading">Recommended Tracks</h3>
             <br />
             {this.state.recommendedTrack.map((track) => 
               <div>

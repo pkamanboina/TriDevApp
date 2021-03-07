@@ -65,7 +65,7 @@
 
 .artistsButton:hover{
     color:#000000;
-    background-color:#7bbdda8f;
+    background-color:rgb(207,228,237);
 }
 
 .playlistsButton{
@@ -91,7 +91,7 @@
 
 .playlistsButton:hover{
     color:#000000;
-    background-color:#7bbdda8f;
+    background-color:rgb(207,228,237);
 }
 
 .topTracksButton{
@@ -117,7 +117,7 @@
 
 .topTracksButton:hover{
     color:#000000;
-    background-color:#7bbdda8f;
+    background-color:rgb(207,228,237);
 }
 
 .recommendedButton{
@@ -143,7 +143,7 @@
     
 .recommendedButton:hover{
     color:#000000;
-    background-color:#7bbdda8f;
+    background-color:rgb(207,228,237);
 }
 
 .recentlyPlayedButton{
@@ -169,7 +169,7 @@
     
 .recentlyPlayedButton:hover{
     color:#000000;
-    background-color:#7bbdda8f;
+    background-color:rgb(207,228,237);
 }
 
 .description{
