@@ -78,6 +78,9 @@ class Body extends React.Component{
         <Link to="/recently-played">
           <button style={{display: !this.state.isLoggedIn && "none"}}className="recentlyPlayedButton" > RecentlyPlayed </button>
         </Link>
+        <Link to="/recommended-tracks">
+          <button style={{display: !this.state.isLoggedIn && "none"}}className="recentlyPlayedButton" > Recommended Tracks </button>
+        </Link>
         <br />
 
         <ul className="description" >
