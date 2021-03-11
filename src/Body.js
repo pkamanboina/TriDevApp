@@ -30,15 +30,20 @@ class Body extends React.Component{
     .then(data => this.setState({
       user: {
         name: data.display_name,
-        imgUrl: data.images[0].url
+        imgUrl: handleUserImage(data.images)
       },
       redirect: null
     }))
-    
 
+    function handleUserImage(jsonImg) {
+      if (jsonImg.length == 0) {
+        return []
+      }
+      else {
+        return jsonImg[0].url
+      }
+    }
     
-    
-
 
   }
   
@@ -53,7 +58,7 @@ class Body extends React.Component{
       <div>
         
         <div className="profile">
-          <img src = {this.state.user.imgUrl} style = {{width: '60px'}}></img>
+          <img src = {this.state.user.imgUrl} onerror="this.onerror=null; this.src='Default.jpg'" alt="" style = {{width: '60px'}}></img>
           <h1 style={{display: !this.state.user.name && "none"}} className="username">
             Username: {this.state.user.name}
           </h1>
@@ -72,14 +77,14 @@ class Body extends React.Component{
         <Link to="/toptracks">
           <button style={{display: !this.state.isLoggedIn && "none"}}className="topTracksButton" > Top Tracks </button>
         </Link>
-        <Link to="/recommendations">
-          <button style={{display: !this.state.isLoggedIn && "none"}}className="recommendedButton" > Recommended </button>
-        </Link>
         <Link to="/recently-played">
-          <button style={{display: !this.state.isLoggedIn && "none"}}className="recentlyPlayedButton" > RecentlyPlayed </button>
+          <button style={{display: !this.state.isLoggedIn && "none"}}className="recentlyPlayedButton" > Recently Played </button>
+        </Link>
+        <Link to="/recommendations">
+          <button style={{display: !this.state.isLoggedIn && "none"}}className="recommendedButton" > Recommended Artists</button>
         </Link>
         <Link to="/recommended-tracks">
-          <button style={{display: !this.state.isLoggedIn && "none"}}className="recentlyPlayedButton" > Recommended Tracks </button>
+          <button style={{display: !this.state.isLoggedIn && "none"}}className="recommendedButton" > Recommended Tracks </button>
         </Link>
         <br />
 
