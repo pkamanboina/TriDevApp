@@ -37,7 +37,7 @@ class Body extends React.Component{
 
     function handleUserImage(jsonImg) {
       if (jsonImg.length == 0) {
-        return []
+        return null
       }
       else {
         return jsonImg[0].url

@@ -35,7 +35,8 @@ class Recommendations extends React.Component {
                 recommended: data.artists.map(artist => {
                     return {
                         name: artist.name,
-                        link: artist.external_urls.spotify
+                        link: artist.external_urls.spotify,
+                        imageUrl: artist.images[2].url
                     }
                 })
                 })) 
@@ -55,9 +56,12 @@ class Recommendations extends React.Component {
             <br />
             {this.state.recommended.map((artists) => 
               <div>
-                        <p className="artistName">
-                            {artists.name} 
-                        </p>
+                  <div>
+                  <img src = {artists.imageUrl}></img>
+                  </div>
+                  <p className="artistName">
+                      {artists.name} 
+                  </p>
                     
               </div>
               )}
