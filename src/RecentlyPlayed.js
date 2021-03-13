@@ -38,7 +38,7 @@ class RecentlyPlayed extends React.Component {
           {this.state.recently_played ?
           <div className = "recentlyPlayed">
 
-            <h3 className="heading">RecentlyPlayed:</h3>
+            <h3 className="heading">Recently Played:</h3>
             
             <br />
             {this.state.recently_played.map(track => 
