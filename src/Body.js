@@ -111,7 +111,7 @@ class Body extends React.Component{
 
 
 function handleLogin() {
-  window.open("https://spotifystatsbackend.herokuapp.com/callback");
+  window.open("https://spotifystatsbackend.herokuapp.com/login");
 }
 
 
