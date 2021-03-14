@@ -1,6 +1,6 @@
 # Spotify Stats App
 
-Try it out!
+Try it out! https://stormy-fortress-79441.herokuapp.com/
  
 A web application for Spotify users who is interested in viewing their top tracks, top artists, playlists, recently played songs, recommended artists, and recommended tracks. We ultilized the Spotify API, Javascript, React.js, and CSS to design and build our application!
 
